@@ -16,6 +16,7 @@ import {
 
 import { useThemeStore } from '../stores/themeStore';
 import AuthPage from '../features/auth/AuthPage';
+import OnboardingPage from '../features/onboarding/OnboardingPage';
 import { supabase } from '../lib/supabase';
 
 function HomePage() {
@@ -269,10 +270,7 @@ function App() {
     <Routes>
       <Route path="/" element={<HomePage />} />
       <Route path="/auth" element={<AuthPage />} />
-      <Route
-        path="/onboarding"
-        element={<DestinationPage destination="onboarding" />}
-      />
+       <Route path="/onboarding" element={<OnboardingPage />} />
       <Route
         path="/app"
         element={<DestinationPage destination="app" />}

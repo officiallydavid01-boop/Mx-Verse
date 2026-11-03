@@ -543,3 +543,110 @@ img {
   }
 }
 
+
+/* ========================================
+   MXVERSE ACADEMIC ONBOARDING
+======================================== */
+
+.onboarding-content {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 560px);
+  margin: 38px auto 0;
+}
+
+.onboarding-progress {
+  display: flex;
+  gap: 7px;
+  margin-bottom: 30px;
+}
+
+.onboarding-progress span {
+  height: 4px;
+  flex: 1;
+  border-radius: 10px;
+  background: var(--surface-hover);
+}
+
+.onboarding-progress .onboarding-progress-active {
+  background: var(--brand-accent);
+}
+
+.onboarding-card {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.onboarding-section-heading {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding-top: 23px;
+  border-top: 1px solid var(--border);
+}
+
+.onboarding-section-heading h2 {
+  margin: 0;
+  font-size: 17px;
+}
+
+.onboarding-section-heading p {
+  margin: 5px 0 0;
+  color: var(--text-muted);
+  font-size: 11px;
+}
+
+.onboarding-textarea,
+.onboarding-select {
+  width: 100%;
+  min-height: 51px;
+  padding: 13px 14px;
+  border: 1px solid var(--border);
+  border-radius: 13px;
+  outline: none;
+  background: var(--background);
+  color: var(--text-primary);
+  font-size: 14px;
+}
+
+.onboarding-textarea {
+  min-height: 90px;
+  resize: vertical;
+  line-height: 1.6;
+}
+
+.onboarding-textarea:focus,
+.onboarding-select:focus {
+  border-color: var(--brand-accent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--brand-accent) 12%, transparent);
+}
+
+.onboarding-select:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.onboarding-privacy {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  margin: -8px 0 0;
+  color: var(--text-muted);
+  font-size: 11px;
+}
+
+.onboarding-privacy svg {
+  color: var(--brand-accent);
+}
+
+@media (max-width: 480px) {
+  .onboarding-content {
+    margin-top: 25px;
+  }
+
+  .onboarding-card {
+    padding: 21px 17px;
+  }
+}
