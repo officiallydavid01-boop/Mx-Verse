@@ -1,12 +1,11 @@
 
-import { useEffect, useState } from 'react';
 import {
   Moon,
   Sun,
   ArrowUpRight,
   Sparkles,
-  ArrowLeft,
 } from 'lucide-react';
+
 import {
   Link,
   Navigate,
@@ -17,7 +16,19 @@ import {
 import { useThemeStore } from '../stores/themeStore';
 import AuthPage from '../features/auth/AuthPage';
 import OnboardingPage from '../features/onboarding/OnboardingPage';
-import { supabase } from '../lib/supabase';
+import AppShell from '../features/app-shell/AppShell';
+
+import {
+  HomeFeedPage,
+  ExplorePage,
+  CommunitiesPage,
+  MessagesPage,
+  NotificationsPage,
+  EventsPage,
+  ProfilePage,
+  SettingsPage,
+  CreatePostPage,
+} from '../features/app-shell/pages/AppPages';
 
 function HomePage() {
   const { theme, toggleTheme } = useThemeStore();
@@ -183,98 +194,27 @@ function HomePage() {
   );
 }
 
-function DestinationPage({ destination }: { destination: 'onboarding' | 'app' }) {
-  const [checking, setChecking] = useState(true);
-  const [hasSession, setHasSession] = useState(false);
-
-  useEffect(() => {
-    let active = true;
-
-    async function checkSession() {
-      if (!supabase) {
-        if (active) {
-          setHasSession(false);
-          setChecking(false);
-        }
-        return;
-      }
-
-      const { data } = await supabase.auth.getSession();
-
-      if (active) {
-        setHasSession(Boolean(data.session));
-        setChecking(false);
-      }
-    }
-
-    checkSession();
-
-    return () => {
-      active = false;
-    };
-  }, []);
-
-  if (checking) {
-    return (
-      <main className="auth-page" style={{ display: 'grid', placeItems: 'center' }}>
-        <p style={{ color: 'var(--text-secondary)' }}>Checking your session...</p>
-      </main>
-    );
-  }
-
-  if (!hasSession) {
-    return <Navigate to="/auth" replace />;
-  }
-
-  const isOnboarding = destination === 'onboarding';
-
-  return (
-    <main
-      className="auth-page"
-      style={{ display: 'grid', placeItems: 'center' }}
-    >
-      <section className="auth-card" style={{ width: 'min(100%, 460px)' }}>
-        <div className="auth-card-icon" style={{ marginBottom: 20 }}>
-          <Sparkles size={21} />
-        </div>
-
-        <h1 style={{ fontSize: 27, margin: '0 0 10px' }}>
-          {isOnboarding ? 'Account created successfully.' : 'You are signed in.'}
-        </h1>
-
-        <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7 }}>
-          {isOnboarding
-            ? 'Your MXVERSE account is ready. We are building the academic profile setup next.'
-            : 'Your session is active. The MXVERSE home experience is the next build step.'}
-        </p>
-
-        <p className="auth-alert auth-success" style={{ marginTop: 20 }}>
-          Authentication is connected. This is a temporary checkpoint, not the finished onboarding or home feed.
-        </p>
-
-        <Link
-          to="/"
-          className="auth-back"
-          style={{ marginTop: 12 }}
-        >
-          <ArrowLeft size={16} />
-          Back to MXVERSE home
-        </Link>
-      </section>
-    </main>
-  );
-}
-
 function App() {
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />
+
       <Route path="/auth" element={<AuthPage />} />
-       <Route path="/onboarding" element={<OnboardingPage />} />
-      <Route
-        path="/app"
-        element={<DestinationPage destination="app" />}
-      />
+
+      <Route path="/onboarding" element={<OnboardingPage />} />
+
+      <Route path="/app" element={<AppShell />}>
+        <Route index element={<HomeFeedPage />} />
+        <Route path="explore" element={<ExplorePage />} />
+        <Route path="communities" element={<CommunitiesPage />} />
+        <Route path="messages" element={<MessagesPage />} />
+        <Route path="notifications" element={<NotificationsPage />} />
+        <Route path="events" element={<EventsPage />} />
+        <Route path="profile" element={<ProfilePage />} />
+        <Route path="settings" element={<SettingsPage />} />
+        <Route path="create" element={<CreatePostPage />} />
+      </Route>
+
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );
