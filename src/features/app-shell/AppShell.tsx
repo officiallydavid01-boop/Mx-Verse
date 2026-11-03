@@ -115,7 +115,11 @@ export default function AppShell() {
   if (checking) {
     return (
       <main className="mx-shell-loading">
-        <div className="mx-loading-mark">MX</div>
+        <img
+  src="/icon/mxverse-icon.svg"
+  alt="MXVERSE"
+  className="mx-loading-mark"
+/>
         <p>Entering your universe...</p>
       </main>
     );
@@ -133,7 +137,11 @@ export default function AppShell() {
   }`}
 >
         <NavLink to="/app" className="mx-sidebar-brand">
-          <span className="mx-brand-mark">MX</span>
+          <img
+  src="/icon/mxverse-icon.svg"
+  alt="MXVERSE"
+  className="mx-brand-mark"
+/>
           {!sidebarCollapsed && (
             <span className="mx-brand-copy">
               <strong>MXVERSE</strong>

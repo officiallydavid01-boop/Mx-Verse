@@ -140,12 +140,16 @@ export default function AuthPage() {
 
       <header className="auth-header">
         <Link to="/" className="auth-brand">
-          <span className="auth-brand-mark">MX</span>
-          <span>
-            <strong>MXVERSE</strong>
-            <small>FUTMINNA</small>
-          </span>
-        </Link>
+  <img
+    src="/icon/mxverse-icon.svg"
+    alt="MXVERSE logo"
+    className="auth-brand-mark"
+  />
+  <span>
+    <strong>MXVERSE</strong>
+    <small>FUTMINNA</small>
+  </span>
+</Link>
 
         <Link to="/" className="auth-back">
           <ArrowLeft size={16} />

@@ -1344,3 +1344,174 @@ img {
   }
 }
 
+
+/* ========================================
+   MXVERSE PWA INSTALL EXPERIENCE
+======================================== */
+
+.pwa-install-card {
+  position: relative;
+  width: min(100%, 540px);
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 20px;
+  border: 1px solid rgba(163, 247, 209, 0.2);
+  border-radius: 20px;
+  background:
+    radial-gradient(
+      circle at 0% 0%,
+      rgba(163, 247, 209, 0.09),
+      transparent 55%
+    ),
+    var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.pwa-install-icon {
+  width: 54px;
+  height: 54px;
+  flex: 0 0 auto;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.pwa-install-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pwa-install-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.pwa-install-heading {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-primary);
+  font-size: 14px;
+}
+
+.pwa-install-heading svg {
+  color: var(--brand-accent);
+}
+
+.pwa-install-content p {
+  margin: 9px 0 15px;
+  color: var(--text-secondary);
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.pwa-install-button {
+  min-height: 43px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 0 16px;
+  border: 0;
+  border-radius: 12px;
+  background: var(--brand-accent);
+  color: #080D18;
+  font-size: 12px;
+  font-weight: 800;
+  transition: transform var(--transition), filter var(--transition);
+}
+
+.pwa-install-button:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.08);
+}
+
+.pwa-install-close {
+  width: 32px;
+  height: 32px;
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: transparent;
+  color: var(--text-muted);
+}
+
+.pwa-install-close:hover {
+  color: var(--text-primary);
+  background: var(--surface-hover);
+}
+
+.pwa-install-instructions {
+  margin: 12px 0;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--background);
+  color: var(--text-secondary);
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.pwa-install-instructions strong {
+  color: var(--brand-accent);
+}
+
+@media (max-width: 480px) {
+  .pwa-install-card {
+    gap: 12px;
+    padding: 16px;
+    border-radius: 17px;
+  }
+
+  .pwa-install-icon {
+    width: 45px;
+    height: 45px;
+  }
+
+  .pwa-install-heading {
+    font-size: 12px;
+  }
+
+  .pwa-install-content p {
+    font-size: 11px;
+  }
+}
+
+/* MXVERSE IMAGE BRANDING */
+
+.mx-brand-mark {
+  display: block;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  object-fit: contain;
+  border-radius: 11px;
+  background: transparent;
+  box-shadow: 0 0 22px rgba(163, 247, 209, 0.12);
+}
+
+.mx-loading-mark {
+  display: block;
+  width: 76px;
+  height: 76px;
+  object-fit: contain;
+  border-radius: 20px;
+  background: transparent;
+}
+
+/* MXVERSE AUTH LOGO */
+
+.auth-brand-mark {
+  display: block;
+  width: 43px;
+  height: 43px;
+  flex-shrink: 0;
+  object-fit: contain;
+  border-radius: 12px;
+  background: transparent;
+  border: none;
+  box-shadow: 0 0 20px rgba(163, 247, 209, 0.12);
+}

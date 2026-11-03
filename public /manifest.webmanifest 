@@ -1,0 +1,25 @@
+
+{
+  "id": "/",
+  "name": "MXVERSE | FUTMINNA",
+  "short_name": "MXVERSE",
+  "description": "The FUTMINNA social universe. Your campus. Your people. Your universe.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "display_override": [
+    "standalone",
+    "minimal-ui"
+  ],
+  "orientation": "portrait",
+  "background_color": "#080D18",
+  "theme_color": "#080D18",
+  "icons": [
+    {
+      "src": "/icon/mxverse-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

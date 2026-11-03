@@ -310,12 +310,16 @@ export default function OnboardingPage() {
 
       <header className="auth-header">
         <div className="auth-brand">
-          <span className="auth-brand-mark">MX</span>
-          <span>
-            <strong>MXVERSE</strong>
-            <small>FUTMINNA</small>
-          </span>
-        </div>
+  <img
+    src="/icon/mxverse-icon.svg"
+    alt="MXVERSE logo"
+    className="auth-brand-mark"
+  />
+  <span>
+    <strong>MXVERSE</strong>
+    <small>FUTMINNA</small>
+  </span>
+</div>
 
         <span className="auth-eyebrow">PROFILE SETUP</span>
       </header>

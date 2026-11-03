@@ -17,6 +17,7 @@ import { useThemeStore } from '../stores/themeStore';
 import AuthPage from '../features/auth/AuthPage';
 import OnboardingPage from '../features/onboarding/OnboardingPage';
 import AppShell from '../features/app-shell/AppShell';
+import PwaInstallPrompt from '../components/pwa/PwaInstallPrompt';
 
 import {
   HomeFeedPage,
@@ -43,7 +44,7 @@ function HomePage() {
     >
       <header
         style={{
-          height: 76,
+          minHeight: 76,
           borderBottom: '1px solid var(--border)',
           display: 'flex',
           alignItems: 'center',
@@ -52,22 +53,15 @@ function HomePage() {
         }}
       >
         <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-          <div
+          <img
+            src="/icon/mxverse-icon.svg"
+            alt="MXVERSE"
             style={{
-              width: 42,
-              height: 42,
-              borderRadius: 14,
-              background: 'var(--surface-raised)',
-              border: '1px solid var(--border)',
-              display: 'grid',
-              placeItems: 'center',
-              color: 'var(--brand-accent)',
-              fontWeight: 900,
-              fontSize: 17,
+              width: 46,
+              height: 46,
+              objectFit: 'contain',
             }}
-          >
-            MX
-          </div>
+          />
 
           <div>
             <strong style={{ letterSpacing: 2 }}>MXVERSE</strong>
@@ -188,6 +182,10 @@ function HomePage() {
           }}
         >
           BUILT FOR THE FUTMINNA COMMUNITY
+        </div>
+
+        <div style={{ marginTop: 28 }}>
+          <PwaInstallPrompt />
         </div>
       </section>
     </main>
