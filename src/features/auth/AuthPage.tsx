@@ -85,17 +85,30 @@ export default function AuthPage() {
       }
 
       if (mode === 'login') {
-        const { error: loginError } =
-          await supabase.auth.signInWithPassword({
-            email: email.trim().toLowerCase(),
-            password,
-          });
-
-        if (loginError) throw loginError;
-
-        window.location.assign('/app');
-        return;
-      }
+  const { data, error: loginError } =
+  await supabase.auth.signInWithPassword({
+    email: email.trim().toLowerCase(),
+    password,
+  });
+  
+  if (loginError) throw loginError;
+  
+  const { data: profile, error: profileError } = await supabase
+    .from('profiles')
+    .select('onboarding_completed_at')
+    .eq('id', data.user.id)
+    .single();
+  
+  if (profileError) throw profileError;
+  
+  if (!profile.onboarding_completed_at) {
+    window.location.assign('/onboarding');
+  } else {
+    window.location.assign('/app');
+  }
+  
+  return;
+}
 
       const { error: resetError } =
         await supabase.auth.resetPasswordForEmail(
