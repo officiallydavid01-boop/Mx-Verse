@@ -1,0 +1,169 @@
+
+import { Moon, Sun, ArrowUpRight, Sparkles } from 'lucide-react';
+import { useThemeStore } from '../stores/themeStore';
+
+function App() {
+  const { theme, toggleTheme } = useThemeStore();
+
+  return (
+    <main
+      style={{
+        minHeight: '100vh',
+        background: 'var(--background)',
+        color: 'var(--text-primary)',
+      }}
+    >
+      <header
+        style={{
+          height: 76,
+          borderBottom: '1px solid var(--border)',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          padding: '0 6%',
+        }}
+      >
+        <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+          <div
+            style={{
+              width: 42,
+              height: 42,
+              borderRadius: 14,
+              background: 'var(--surface-raised)',
+              border: '1px solid var(--border)',
+              display: 'grid',
+              placeItems: 'center',
+              color: 'var(--brand-accent)',
+              fontWeight: 900,
+              fontSize: 17,
+            }}
+          >
+            MX
+          </div>
+
+          <div>
+            <strong style={{ letterSpacing: 2 }}>MXVERSE</strong>
+            <div
+              style={{
+                fontSize: 9,
+                letterSpacing: 1.5,
+                color: 'var(--text-muted)',
+              }}
+            >
+              FUTMINNA
+            </div>
+          </div>
+        </div>
+
+        <button
+          onClick={toggleTheme}
+          aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+          style={{
+            width: 44,
+            height: 44,
+            borderRadius: 14,
+            border: '1px solid var(--border)',
+            background: 'var(--surface)',
+            color: 'var(--text-primary)',
+            display: 'grid',
+            placeItems: 'center',
+          }}
+        >
+          {theme === 'dark' ? <Sun size={19} /> : <Moon size={19} />}
+        </button>
+      </header>
+
+      <section
+        className="mx-container"
+        style={{
+          minHeight: '80vh',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          paddingTop: 70,
+          paddingBottom: 70,
+        }}
+      >
+        <div
+          style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: 8,
+            color: 'var(--brand-accent)',
+            fontSize: 12,
+            fontWeight: 700,
+            letterSpacing: 2,
+            marginBottom: 28,
+          }}
+        >
+          <Sparkles size={16} />
+          THE FUTMINNA SOCIAL UNIVERSE
+        </div>
+
+        <h1
+          style={{
+            fontSize: 'clamp(48px, 10vw, 100px)',
+            lineHeight: 1.02,
+            letterSpacing: '-0.065em',
+            maxWidth: 900,
+            margin: 0,
+          }}
+        >
+          Your campus.
+          <br />
+          Your people.
+          <br />
+          <span className="mx-gradient-text">Your universe.</span>
+        </h1>
+
+        <p
+          style={{
+            color: 'var(--text-secondary)',
+            fontSize: 'clamp(15px, 2vw, 18px)',
+            lineHeight: 1.8,
+            maxWidth: 520,
+            marginTop: 28,
+          }}
+        >
+          Discover conversations, meet people, explore communities
+          and stay connected to everything happening around FUTMINNA.
+        </p>
+
+        <div style={{ marginTop: 36 }}>
+          <button
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: 12,
+              padding: '15px 22px',
+              borderRadius: 14,
+              border: 'none',
+              background: 'var(--brand-accent)',
+              color: '#080D18',
+              fontWeight: 800,
+              fontSize: 14,
+            }}
+          >
+            Explore MXVERSE
+            <ArrowUpRight size={18} />
+          </button>
+        </div>
+
+        <div
+          style={{
+            marginTop: 70,
+            paddingTop: 22,
+            borderTop: '1px solid var(--border)',
+            color: 'var(--text-muted)',
+            fontSize: 12,
+            letterSpacing: 1,
+          }}
+        >
+          BUILT FOR THE FUTMINNA COMMUNITY
+        </div>
+      </section>
+    </main>
+  );
+}
+
+export default App;
