@@ -1,4 +1,4 @@
-
+import mxverseIcon from '../../assets/mxverse-icon.svg';
 import { useEffect, useState } from 'react';
 import { Download, X, Smartphone } from 'lucide-react';
 
@@ -90,9 +90,9 @@ function PwaInstallPrompt() {
     <section className="pwa-install-card">
       <div className="pwa-install-icon">
         <img
-          src="/icon/mxverse-icon.svg"
-          alt="MXVERSE"
-        />
+  src={mxverseIcon}
+  alt="MXVERSE"
+/>
       </div>
 
       <div className="pwa-install-content">

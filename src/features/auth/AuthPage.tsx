@@ -15,7 +15,7 @@ import {
 import { supabase } from '../../lib/supabase';
 
 type AuthMode = 'signup' | 'login' | 'forgot';
-
+import mxverseIcon from '../../assets/mxverse-icon.svg';
 export default function AuthPage() {
   const [mode, setMode] = useState<AuthMode>('signup');
   const [displayName, setDisplayName] = useState('');
@@ -141,10 +141,10 @@ export default function AuthPage() {
       <header className="auth-header">
         <Link to="/" className="auth-brand">
   <img
-    src="/icon/mxverse-icon.svg"
-    alt="MXVERSE logo"
-    className="auth-brand-mark"
-  />
+  src={mxverseIcon}
+  alt="MXVERSE logo"
+  className="auth-brand-mark"
+/>
   <span>
     <strong>MXVERSE</strong>
     <small>FUTMINNA</small>

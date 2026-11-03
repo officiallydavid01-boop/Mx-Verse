@@ -9,7 +9,7 @@ import {
   CheckCircle2,
 } from 'lucide-react';
 import { supabase } from '../../lib/supabase';
-
+import mxverseIcon from '../../assets/mxverse-icon.svg';
 type AcademicOption = {
   id: string;
   name: string;
@@ -311,10 +311,10 @@ export default function OnboardingPage() {
       <header className="auth-header">
         <div className="auth-brand">
   <img
-    src="/icon/mxverse-icon.svg"
-    alt="MXVERSE logo"
-    className="auth-brand-mark"
-  />
+  src={mxverseIcon}
+  alt="MXVERSE logo"
+  className="auth-brand-mark"
+/>
   <span>
     <strong>MXVERSE</strong>
     <small>FUTMINNA</small>

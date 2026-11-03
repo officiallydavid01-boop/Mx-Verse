@@ -14,6 +14,7 @@ import {
 } from 'react-router-dom';
 
 import { useThemeStore } from '../stores/themeStore';
+import mxverseIcon from '../assets/mxverse-icon.svg';
 import AuthPage from '../features/auth/AuthPage';
 import OnboardingPage from '../features/onboarding/OnboardingPage';
 import AppShell from '../features/app-shell/AppShell';
@@ -54,8 +55,7 @@ function HomePage() {
       >
         <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
           <img
-            src="/icon/mxverse-icon.svg"
-            alt="MXVERSE"
+            src={mxverseIcon}
             style={{
               width: 46,
               height: 46,

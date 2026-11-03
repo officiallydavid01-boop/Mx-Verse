@@ -31,7 +31,7 @@ import {
 
 import { useThemeStore } from '../../stores/themeStore';
 import { supabase } from '../../lib/supabase';
-
+import mxverseIcon from '../../assets/mxverse-icon.svg';
 const navigation = [
   { label: 'Home', path: '/app', icon: Home, end: true },
   { label: 'Explore', path: '/app/explore', icon: Compass },
@@ -116,7 +116,7 @@ export default function AppShell() {
     return (
       <main className="mx-shell-loading">
         <img
-  src="/icon/mxverse-icon.svg"
+  src={mxverseIcon}
   alt="MXVERSE"
   className="mx-loading-mark"
 />
@@ -138,7 +138,7 @@ export default function AppShell() {
 >
         <NavLink to="/app" className="mx-sidebar-brand">
           <img
-  src="/icon/mxverse-icon.svg"
+  src={mxverseIcon}
   alt="MXVERSE"
   className="mx-brand-mark"
 />
